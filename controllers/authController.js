@@ -26,6 +26,7 @@ exports.signUp = async (req, res, next) => {
 // login
 exports.login = async (req, res, next) => {
 	const { username, password } = req.body;
+	req.session.username = username;
 
 	if (!username || !password) {
 		return res.status(400).json({

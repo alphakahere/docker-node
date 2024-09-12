@@ -12,7 +12,9 @@ services:
       - NODE_ENV=development
       - MONGO_USER=root 
       - MONGO_PASSWORD=passerty
+      - SESSION_SECRET=secret_node@12
     command: yarn dev
+
   mongo: 
     image: mongo
     environment:
