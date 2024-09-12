@@ -8,6 +8,8 @@ const {
 	PORT,
 } = require("./config/config");
 
+const postRouter = require("./routes/postRoute");
+
 const app = express();
 
 const port = PORT;
@@ -28,6 +30,8 @@ connectWithRetry();
 app.get("/", (req, res) => {
 	res.send("<h1>Hello World !</h1>");
 });
+app.use(express.json());
+app.use("/api/v1/posts", postRouter);
 
 app.listen(port, () => {
 	console.log(`Server is running on port ${port}`);
