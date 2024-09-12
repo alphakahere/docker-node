@@ -9,6 +9,7 @@ const {
 } = require("./config/config");
 
 const postRouter = require("./routes/postRoute");
+const userRouter = require("./routes/userRoute");
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.get("/", (req, res) => {
 });
 app.use(express.json());
 app.use("/api/v1/posts", postRouter);
+app.use("/api/v1/users", userRouter);
 
 app.listen(port, () => {
 	console.log(`Server is running on port ${port}`);
