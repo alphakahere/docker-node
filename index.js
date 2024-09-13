@@ -56,7 +56,7 @@ app.use(
 		cookie: {
 			secure: false, // Assure-toi que cela est correct pour ton environnement
 			httpOnly: true,
-			maxAge: 30000,
+			maxAge: 60000,
 		},
 	})
 );
