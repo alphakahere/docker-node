@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const redis = require("redis");
+const cors = require("cors");
 
 const {
 	MONGO_USER,
@@ -43,9 +44,10 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
+app.use(cors());
+
 app.get("/api/v1/", (req, res) => {
 	res.send("<h1>Hello World !</h1>");
-	console.log("Hey there");
 });
 
 app.enable("trust proxy");
